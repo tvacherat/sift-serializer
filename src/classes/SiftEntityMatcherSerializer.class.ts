@@ -68,6 +68,15 @@ export class SiftEntityMatcherSerializer {
   }
 
   /**
+   * Finds a node by its unique ID.
+   * @param id The unique numeric ID of the node to find.
+   * @returns The node if found; otherwise, null.
+   */
+  public findNodeById(id: number): SiftSerializerASTNode | null {
+    return this._findNodeById(this._tree, id);
+  }
+
+  /**
    * Adds a condition node.
    * If no parentId is provided or if the tree is empty, the node is added at the root.
    * @param fieldPath The field path for the condition.
